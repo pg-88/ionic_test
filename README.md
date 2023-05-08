@@ -1,24 +1,25 @@
-# ionic_test
-prova delle funzionalità di Ionic
+# Appunti
+
+## prova delle funzionalità di Ionic
 
 
-## [app component](test-app/src/app/app.component.html)
+### [app component](test-app/src/app/app.component.html)
 
 Parte HTML della pagina, sfrutta la logica del component che si trova in app.component.ts.
 
 La pagina è di fatto angular e usa 
 
-## Creare nuovo component
+### Creare nuovo component
 
 `ionic g component "component_name"`
 comando che genera automaticamente una cartella (dentro app) con i 4 files che servono a far funzionare il component
 
 
-## [routing app](test-app/src/app/app-routing.module.ts)
+### [routing app](test-app/src/app/app-routing.module.ts)
 
 Gestisce l'indirizzamento dell'app. Anche per ogni component viene creato un file routing che serve per avere una parte di pagina renderizzata al suo interno 
 
-## Usare un service
+### Usare un service
 
 Nel constructor dei component vanno dichiarate le variabili che richiamano (nella dichiarazione del tipo) il modulo (routin piuttosto che service) da utilizzare nel codice.
 
@@ -41,4 +42,16 @@ export class MyComponent {
 }
 </xml>
 
-nell'esempio sopra 
+nell'esempio sopra:
+- my-page è il selector di una pagina già creata nell'app
+- router è un nome di una variabile, posso dare un nome diverso l'importante è che sia del tipo Router.
+
+## jsPDF 
+
+- install:
+>`npm install jspdf --save`
+
+- import 
+>import { jsPDF } from "jspdf";
+
+- uso: instanziare un oggetto dela classe jsPDF()

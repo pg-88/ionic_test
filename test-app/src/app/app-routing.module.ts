@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'to-do',
     loadChildren: () => import('./to-do/to-do.module').then( m => m.ToDoPageModule)
   },
+  {
+    path: 'fake-report',
+    loadChildren: () => import('./fake-report/fake-report.module').then( m => m.FakeReportPageModule)
+  },
 ];
 
 @NgModule({
