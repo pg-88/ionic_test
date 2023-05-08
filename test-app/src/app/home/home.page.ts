@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
+  //bisogna inserire il parametro router nel costruttore 
+  constructor(private router: Router) {}
 
   test(){
-    console.log("cliccato")
+    console.log("cliccato");
+  }
+
+  //qui router viene riassegnato
+  navigate(){
+    this.router.navigate(['/to-do']);
+    console.log("cliccato TO DO LIST")
   }
 }

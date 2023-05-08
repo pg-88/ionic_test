@@ -10,4 +10,17 @@
       <ion-title size="large">to-do</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-input
+    type="text"
+    label="To do list"
+    placeholder="Inserisci attività"
+    (change)="updateLst($event)"
+  >
+
+  </ion-input>
+  <ion-list>
+    <ion-item *ngFor="let e of this.list">
+      {{ e }}
+    </ion-item>
+  </ion-list>
 </ion-content>
