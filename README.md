@@ -17,3 +17,28 @@ comando che genera automaticamente una cartella (dentro app) con i 4 files che s
 ## [routing app](test-app/src/app/app-routing.module.ts)
 
 Gestisce l'indirizzamento dell'app. Anche per ogni component viene creato un file routing che serve per avere una parte di pagina renderizzata al suo interno 
+
+## Usare un service
+
+Nel constructor dei component vanno dichiarate le variabili che richiamano (nella dichiarazione del tipo) il modulo (routin piuttosto che service) da utilizzare nel codice.
+
+Per utilizzare un service o un router bisogna dichiarare una variabile nel constructor che richiama nel tipo il modulo importato. Esempio:
+
+<xml>
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  ...
+})
+export class MyComponent {
+
+  constructor(private router: Router){}
+
+  navigate(){
+    this.router.navigate(['/my-page'])
+  }
+}
+</xml>
+
+nell'esempio sopra 
