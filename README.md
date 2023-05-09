@@ -1,5 +1,18 @@
 # Appunti
 
+- [Appunti](#appunti)
+  - [prova delle funzionalità di Ionic](#prova-delle-funzionalità-di-ionic)
+    - [app component](#app-component)
+    - [Creare nuovo component](#creare-nuovo-component)
+    - [routing app](#routing-app)
+    - [Creare collegamenti tra le pagine](#creare-collegamenti-tra-le-pagine)
+    - [Usare un service](#usare-un-service)
+  - [jsPDF](#jspdf)
+    - [Metodi della classe jsPDF:](#metodi-della-classe-jspdf)
+    - [autoTable????](#autotable)
+  - [Come Procedere:](#come-procedere)
+
+
 ## prova delle funzionalità di Ionic
 
 
@@ -84,3 +97,13 @@ Per salvare il pdf è necessario farlo con una fz di [callback](https://en.wikip
 
 
 ### autoTable????
+
+## Come Procedere:
+
+Due diversi approcci:
+- creare canvas e dal canvas generare PDF
+- introdurre tutto (testi, immagini, simboli e caratteri) direttamente dai dati al PDF
+
+### Da HTML
+
+Avrò bisogno di usare [html2canvas](https://html2canvas.hertzen.com/getting-started) per generare un canvas da html, oppure il plugin contex2D di jsPDF che ricalca il funzionamento dell'API dei canvas in HTML5.
