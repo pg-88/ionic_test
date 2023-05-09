@@ -75,6 +75,12 @@ Ogni service ha una funzione ben specifica in modo da mantenere ben distnti i co
  >> x è la coordinata espressa nell'unità dichiarata per l'oggetto jsPDF, rispetto al bordo di sinistra del foglio.
  >>
  >> y è la coordinata espressa nell'unità dichiarata per l'oggetto jsPDF, rispetto al bordo superiore del foglio.
-- table
 
-### autoTable
+- [html](https://artskydj.github.io/jsPDF/docs/module-html.html#~html)
+
+Unico parametro obbligatorio è l'elemento html o stringa equivalente.
+Mentre il metodo text ritorna un oggetto pdf con il testo passatogli al suo interno, il metodo html non ha ritoro. 
+Per salvare il pdf è necessario farlo con una fz di [callback](https://en.wikipedia.org/wiki/Callback_(computer_programming)#JavaScript) passata opzionalmente come parametro del metodo.
+
+
+### autoTable????

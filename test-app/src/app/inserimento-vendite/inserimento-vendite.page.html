@@ -19,23 +19,22 @@
             </ion-row>
             <ion-row >
                 <ion-col>
-                    {{ this.listaVendite[0].id }}
+                    {{ this.data()[0].id }}
                 </ion-col>
                 <ion-col>
-                    {{ this.listaVendite[0].nome }}
+                    {{ this.data()[0].nome }}
                 </ion-col>                
                 <ion-col>
-                    {{ this.listaVendite[0].prodotto }}
+                    {{ this.data()[0].prodotto }}
                 </ion-col>
                 <ion-col>
-                    {{ this.listaVendite[0].prezzo }}
+                    {{ this.data()[0].prezzo }}
                 </ion-col>
                 <ion-col>
-                    {{ this.listaVendite[0].data }}
+                    {{ this.data()[0].data }}
                 </ion-col>
             </ion-row>
         </ion-grid>
     </main>
-
-    <ion-button (click)="toPDF()">Genera PDF</ion-button>
+    <ion-button (click)="btnpdf()">Genera PDF</ion-button>
 </ion-content>

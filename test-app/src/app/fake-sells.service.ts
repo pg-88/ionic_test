@@ -14,7 +14,25 @@ export interface Vendita {
 })
 export class FakeSellsService {
 
-    reportVendite: Vendita[] = [];
+    //reportVendite: Vendita[] = [];
+
+    //solo per test:
+    reportVendite: Vendita[] = [
+        {
+            id: 0,
+            nome: "pippo",
+            prodotto: "wd40",
+            prezzo: 35,
+            data: new Date()
+        },
+        {
+            id: 1,
+            nome: "pluto",
+            prodotto: "wd40",
+            prezzo: 35,
+            data: new Date()
+        }
+    ];
 
     constructor() {}
 
