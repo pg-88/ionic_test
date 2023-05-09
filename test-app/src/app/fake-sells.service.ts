@@ -27,10 +27,19 @@ export class FakeSellsService {
         cliente:string, 
         prod: string, 
         prz: number, 
-        : Date | null){
+        giorno: Date | null){
+            if (prog == undefined){
+                prog = this.getLastSell() + 1; 
+            }
+            if (giorno == undefined){
+                giorno = new Date();
+            }
             this.reportVendite.push({
                 id: prog,
-                //continua a riempire l'oggetto
+                nome: cliente,
+                prodotto: prod,
+                prezzo: prz,
+                data: giorno
             })
      }
 }

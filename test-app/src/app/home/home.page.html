@@ -1,21 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header 
+    [translucent]="true"
+    collapse="fade">
+    <ion-toolbar>
+        <ion-title>
+            Home Page
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button (click)="navigate()">To Do List</ion-button>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
+<nav>
+    <ion-button (click)="vendita()">Inserimento Vendita</ion-button>
+    <ion-button (click)="toDo()">To Do List</ion-button>
+</nav>
+<div id="container">
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+</div>
 </ion-content>

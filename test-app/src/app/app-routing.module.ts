@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'fake-report',
     loadChildren: () => import('./fake-report/fake-report.module').then( m => m.FakeReportPageModule)
   },
+  {
+    path: 'inserimento-vendite',
+    loadChildren: () => import('./inserimento-vendite/inserimento-vendite.module').then( m => m.InserimentoVenditePageModule)
+  },
 ];
 
 @NgModule({

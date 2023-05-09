@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>inserimento-vendite</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">inserimento-vendite</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <main>
+        <ion-grid id="export-table">
+            <ion-row>
+                <ion-col *ngFor="let h of this.header()">
+                    {{ h }}
+                </ion-col>
+            </ion-row>
+            <ion-row >
+                <ion-col>
+                    {{ this.listaVendite[0].id }}
+                </ion-col>
+                <ion-col>
+                    {{ this.listaVendite[0].nome }}
+                </ion-col>                
+                <ion-col>
+                    {{ this.listaVendite[0].prodotto }}
+                </ion-col>
+                <ion-col>
+                    {{ this.listaVendite[0].prezzo }}
+                </ion-col>
+                <ion-col>
+                    {{ this.listaVendite[0].data }}
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </main>
+
+    <ion-button (click)="toPDF()">Genera PDF</ion-button>
+</ion-content>

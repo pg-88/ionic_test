@@ -17,13 +17,14 @@ comando che genera automaticamente una cartella (dentro app) con i 4 files che s
 
 ### [routing app](test-app/src/app/app-routing.module.ts)
 
-Gestisce l'indirizzamento dell'app. Anche per ogni component viene creato un file routing che serve per avere una parte di pagina renderizzata al suo interno 
+Gestisce l'indirizzamento dell'app. Anche per ogni component viene creato un file routing che serve per avere una parte di pagina renderizzata al suo interno
 
-### Usare un service
+### Creare collegamenti tra le pagine
 
-Nel constructor dei component vanno dichiarate le variabili che richiamano (nella dichiarazione del tipo) il modulo (routin piuttosto che service) da utilizzare nel codice.
+Esistono sostanzialmente due metodi:
+- nella pagina dove si trova il link (o bottone) si invoca un metodo collegato all'evento di click che invoca il router e assegna il nuovo indirizzo (path che è indicato in [app-routing.module.ts](./test-app/src/app/app-routing.module.ts))
 
-Per utilizzare un service o un router bisogna dichiarare una variabile nel constructor che richiama nel tipo il modulo importato. Esempio:
+- si può usare il routerLink in maniera simile a un href per i tag anchor passando tra parentesi [] il percorso path del routing
 
 <xml>
 import { Component } from '@angular/core';
@@ -46,6 +47,15 @@ nell'esempio sopra:
 - my-page è il selector di una pagina già creata nell'app
 - router è un nome di una variabile, posso dare un nome diverso l'importante è che sia del tipo Router.
 
+### Usare un service
+
+Nel constructor dei component vanno dichiarate le variabili che richiamano (nella dichiarazione del tipo) il modulo (routing piuttosto che service) da utilizzare nel codice.
+
+Per utilizzare un service (o un router) bisogna dichiarare una variabile nel constructor che richiama nel tipo il modulo importato.
+
+Ogni service ha una funzione ben specifica in modo da mantenere ben distnti i compiti di ogni parte di codice.
+
+
 ## jsPDF 
 
 - install:
@@ -55,3 +65,16 @@ nell'esempio sopra:
 >import { jsPDF } from "jspdf";
 
 - uso: instanziare un oggetto dela classe jsPDF()
+
+### Metodi della classe jsPDF:
+- [text](https://artskydj.github.io/jsPDF/docs/jsPDF.html#text) 
+ >`text(text, x, y, optionsopt, transform) → {jsPDF}` 
+ >>Args:
+ >>text è una stringa
+ >>
+ >> x è la coordinata espressa nell'unità dichiarata per l'oggetto jsPDF, rispetto al bordo di sinistra del foglio.
+ >>
+ >> y è la coordinata espressa nell'unità dichiarata per l'oggetto jsPDF, rispetto al bordo superiore del foglio.
+- table
+
+### autoTable

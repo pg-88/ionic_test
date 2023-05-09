@@ -15,8 +15,12 @@ export class HomePage {
   }
 
   //qui router viene riassegnato
-  navigate(){
+  toDo(){
     this.router.navigate(['/to-do']);
     console.log("cliccato TO DO LIST")
+  }
+
+  vendita(){
+    this.router.navigate(['/inserimento-vendite'])
   }
 }
