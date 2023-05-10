@@ -18,9 +18,38 @@
       </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <canvas #docCanvas width="800" height="1130">
-        <!--troppo pochi pixels-->
+      <table id="preview-table" #preview width="800">
+        <thead>
+          <th *ngFor="let h of this.getKeys()">
+            {{ h }}
+          </th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of this.dataList">
+            <td>
+              {{ e.id }}
+            </td>
+            <td>
+              {{ e.nome }}
+            </td>
+            <td>
+              {{ e.prodotto }}
+            </td>
+            <td>
+              {{ e.prezzo }}
+            </td>
+            <td>
+              {{ this.getData(e.id) }}
+            </td>            
+          </tr>
+        </tbody>
+      </table>
+      <canvas #docCanvas width="600" height="615">
+
       </canvas>
+    </ion-card-content>
+    <ion-card-content id="doc-canvas">
+
     </ion-card-content>
   </ion-card>
 </ion-content>

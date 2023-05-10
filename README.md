@@ -126,3 +126,7 @@ Per salvare il pdf è necessario farlo con una fz di [callback](https://en.wikip
 
 ### Canvas
 **ctx** è la variabile che viene utilizzata per il context, quella che definisce il dominio ('2d' o '3d') e permette di disegnare nel canvas.
+Approfondire le proprietà di ctx per allineare meglio gli elementi.
+Creare un sistema (una classe o un service) per impostare decentemente gli elementi nella pagina.
+
+*per ora mi sono appoggiato al template usando una reference per l'elemento canvas, forse si può fare tutto senza modificare il template quindi creando una variabile tipo HTMLElementCanvas all'interno della component class e lavorare su quella.*

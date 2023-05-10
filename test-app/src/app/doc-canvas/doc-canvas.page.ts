@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FakeSellsService, Vendita } from '../fake-sells.service';
-import { NumberSymbol } from '@angular/common';
+import  html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-doc-canvas',
@@ -15,7 +16,6 @@ export class DocCanvasPage implements OnInit {
    * 
   */
   @ViewChild('docCanvas', {static: true}) docCanvas!: ElementRef;
-
   dataList: Vendita[] = this.list.reportVendite;
 
 
@@ -36,9 +36,18 @@ export class DocCanvasPage implements OnInit {
     //   }
     // }
     this.intestazioneTabella();
+    this.creaPDF();
+    // this.generaCanvas();
   }
 
   intestazioneTabella(){
+    /**Genera il context e inserisce nel canvas del testo per l'intestazione
+     * tabella.
+     * Si appoggia al Elemento con reference 'docCanvas' dichiarato come
+     * View child.
+     * ### TO DO ###
+     * sistemare allineamenti carattere e creare la griglia
+     */
     const ctx = this.docCanvas.nativeElement.getContext('2d');
     ctx.fillStyle = '#cc0000';
     ctx.scale(1,1);
@@ -48,8 +57,42 @@ export class DocCanvasPage implements OnInit {
     colsNames.forEach(name => {
       console.log(name);
       ctx.fillText(name, distX, 25);
-      distX += 150;
+      distX += 120;
     });
   }
 
+  getKeys(){
+    return Object.keys(this.dataList[0]);
+  }
+
+  getData(index: number){
+    if(index <= this.dataList.length){
+      const localDate = this.dataList[index].data.getDate();
+      return localDate;
+    } else {
+      console.log("Data non presente.");
+      return Date();
+    }
+  }
+  generaCanvas(){
+    const preview = document.getElementById('preview-table')!;
+    html2canvas(preview).then(function(canvas){
+      console.log(canvas);
+      document.getElementById('doc-canvas')!.append(canvas)
+    })
+    .catch(err => console.log(err))
+  }
+
+  creaPDF(){
+    /**prende il primo canvas che trova nella pagina,
+     * quindi lo trasforma in immagine codificata come URL
+     * poi lo passa all'oggetto di jsPDF per esportare un pdf.
+     */
+    let myPdf = new jsPDF('p', 'mm', 'a4');
+    let image = document.getElementsByTagName('canvas')[0].toDataURL('img/jpeg', 1);
+    console.log(image);
+
+    myPdf.addImage(image, 'jpeg', 0, 0, 100,100);
+    myPdf.save("test.pdf");
+  }
 }
