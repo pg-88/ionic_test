@@ -2,6 +2,7 @@ import { ArrayType } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ListService } from '../list.service';
 
+
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.page.html',

@@ -4,7 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ListService {
-    list: string[] = [];//inizializzo array vuoto
+    list: string[] = [
+        "Test1",
+        "Test2",
+        "Test3"
+    ];//inizializzo array vuoto
   
     constructor() {}
 
