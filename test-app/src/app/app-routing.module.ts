@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'inserimento-vendite',
     loadChildren: () => import('./inserimento-vendite/inserimento-vendite.module').then( m => m.InserimentoVenditePageModule)
   },
+  {
+    path: 'doc-canvas',
+    loadChildren: () => import('./doc-canvas/doc-canvas.module').then( m => m.DocCanvasPageModule)
+  },
 ];
 
 @NgModule({

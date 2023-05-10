@@ -24,7 +24,7 @@ export class HomePage implements OnInit {
     this.ctx.font = "20 pt Verdena";
 
     //test dei metodi:
-    this.addText("Hello World!");
+    //this.addText("Hello World!");
   }
 
   addText(txt: string){
@@ -36,11 +36,15 @@ export class HomePage implements OnInit {
   //qui router viene riassegnato
   toDo(){
     this.router.navigate(['/to-do']);
-    console.log("cliccato TO DO LIST")
+    console.log("cliccato TO DO LIST");
   }
 
   vendita(){
-    this.router.navigate(['/inserimento-vendite'])
+    this.router.navigate(['/inserimento-vendite']);
+  }
+
+  canvas(){
+    this.router.navigate(['/doc-canvas']);
   }
 
 
