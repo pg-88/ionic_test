@@ -1,5 +1,5 @@
 # To Do
-- [ ] ([creare un component che prende i dati e disegna un canvas](#canvas))
+- [x] ([creare un component che prende i dati e disegna un canvas](#canvas))
 - [ ] ([disegno dei testi e struttura documento di base](#context))
 - [ ] ([predisporre un sistema per poter selezionare quali parti introdurre nel documento]())
 - [ ] ([validazione del documento generato]())
