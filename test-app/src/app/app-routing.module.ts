@@ -12,18 +12,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'to-do',
-    loadChildren: () => import('./to-do/to-do.module').then( m => m.ToDoPageModule)
-  },
-  {
-    path: 'fake-report',
-    loadChildren: () => import('./fake-report/fake-report.module').then( m => m.FakeReportPageModule)
-  },
-  {
-    path: 'inserimento-vendite',
-    loadChildren: () => import('./inserimento-vendite/inserimento-vendite.module').then( m => m.InserimentoVenditePageModule)
-  },
-  {
     path: 'doc-canvas',
     loadChildren: () => import('./doc-canvas/doc-canvas.module').then( m => m.DocCanvasPageModule)
   },

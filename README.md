@@ -10,7 +10,6 @@
     - [Usare un service](#usare-un-service)
   - [jsPDF](#jspdf)
     - [Metodi della classe jsPDF:](#metodi-della-classe-jspdf)
-    - [autoTable????](#autotable)
   - [Come Procedere:](#come-procedere)
     - [Canvas](#canvas)
 
@@ -113,9 +112,6 @@ Unico parametro obbligatorio è l'elemento html o stringa equivalente.
 Mentre il metodo text ritorna un oggetto pdf con il testo passatogli al suo interno, il metodo html non ha ritoro. 
 Per salvare il pdf è necessario farlo con una fz di [callback](https://en.wikipedia.org/wiki/Callback_(computer_programming)#JavaScript) passata opzionalmente come parametro del metodo.
 
-
-### autoTable????
-
 ## Come Procedere:
 
 - Creare un canvas che starà dentro un component *(preview)* che mostra un layout del documento.
@@ -125,8 +121,11 @@ Per salvare il pdf è necessario farlo con una fz di [callback](https://en.wikip
 - Dal canvas creare il pdf
 
 ### Canvas
+
+Dalla doc MDN: [librerie consigliate per manipolare canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API#libraries)
+
 **ctx** è la variabile che viene utilizzata per il context, quella che definisce il dominio ('2d' o '3d') e permette di disegnare nel canvas.
 Approfondire le proprietà di ctx per allineare meglio gli elementi.
 Creare un sistema (una classe o un service) per impostare decentemente gli elementi nella pagina.
 
-*per ora mi sono appoggiato al template usando una reference per l'elemento canvas, forse si può fare tutto senza modificare il template quindi creando una variabile tipo HTMLElementCanvas all'interno della component class e lavorare su quella.*
+[scalare per mantenere la risoluzione a schermo](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas#scaling_for_high_resolution_displays)

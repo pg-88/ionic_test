@@ -39,14 +39,12 @@
               {{ e.prezzo }}
             </td>
             <td>
-              {{ this.getData(e.id) }}
+              {{ this.dataVendita(e.id) }}
             </td>            
           </tr>
         </tbody>
       </table>
-      <canvas #docCanvas width="600" height="615">
-
-      </canvas>
+      <canvas #docCanvas width="600" height="615"></canvas>
     </ion-card-content>
     <ion-card-content id="doc-canvas">
 
