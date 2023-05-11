@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'doc-canvas',
     loadChildren: () => import('./doc-canvas/doc-canvas.module').then( m => m.DocCanvasPageModule)
+  },  {
+    path: 'meteo',
+    loadChildren: () => import('./meteo/meteo.module').then( m => m.MeteoPageModule)
   },
+
 ];
 
 @NgModule({
