@@ -62,5 +62,4 @@ export class MeteoService {
       console.error("Qualcosa è andato storto", err);
     }
   }
-
 }

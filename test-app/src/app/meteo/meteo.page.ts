@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MeteoService, WeatherForecast } from '../meteo.service';
+import { GeneraPdfService } from '../genera-pdf.service';
+import { RowInput } from 'jspdf-autotable';
 
 @Component({
   selector: 'app-meteo',
@@ -9,10 +11,12 @@ import { MeteoService, WeatherForecast } from '../meteo.service';
 export class MeteoPage implements OnInit {
   previsioni5g!: WeatherForecast[];
 
-  constructor(private meteo: MeteoService) {};
+  constructor(
+    private meteo: MeteoService,
+    private pdf: GeneraPdfService
+    ){};
 
   ngOnInit() {
-    //this.previsioni('Modena');
   }
 
   async cheTempoFa(city: string){
@@ -27,13 +31,13 @@ export class MeteoPage implements OnInit {
     
     for (let i in prevArr){
       //console.log(`Elemento indice ${i}`,prevArr[i])
-      let riga = [];
+      let riga = new Array();
       let date = new Date(prevArr[i].dt_txt);
       riga.push(date.toLocaleDateString());
       riga.push(date.toLocaleTimeString());
       riga.push(prevArr[i].weather[0].description);
-      riga.push(prevArr[i].main.feels_like - 273.16);
-      contenuto.push([riga]);
+      riga.push(Math.round(prevArr[i].main.feels_like - 273.16));
+      contenuto.push(riga);
     }
     console.log(contenuto);
     return({
@@ -41,7 +45,15 @@ export class MeteoPage implements OnInit {
       body: contenuto
     });
   }
-//### TO DO ###
-//Impaginare il risultato nel template
-//Creare il pdf 'reportMeteo.pdf'
+
+  async generaPDF(){
+    /**servizio genera-pdf*/
+    console.log('Facciamo un pdf');
+    //const tab = {header: ['a','b','c','d'], body:[['a1','b1','c1','d1'],['a2','b2','c2','d2']]};
+    const tab = await this.previsioni('Modena');
+    let testa = tab.header;
+    let corpo = tab.body;
+    this.pdf.inserisciTab(testa, corpo);
+    this.pdf.doc.save('weather.pdf');
+  }
 }
