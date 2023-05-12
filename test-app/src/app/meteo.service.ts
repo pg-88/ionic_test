@@ -8,5 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class MeteoService {
 
-  constructor(private) { }
+  constructor(private http: HttpClient) { }
+
+  
+
 }
