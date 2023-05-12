@@ -20,6 +20,7 @@ export interface WeatherForecast {
 })
 export class MeteoService {
   datiMeteo!: WeatherCondition;
+  previsioni!: any[];
 
   constructor() {}
 
@@ -46,7 +47,7 @@ export class MeteoService {
     }
   }
 
-  async previsioni(city: string = 'Modena'){
+  async getPrevisioni(city: string = 'Modena'){
     try{
       const request = 
       await fetch(`${environment.previsioniMeteo}q=${city}&appid=${environment.apiKey}`,
@@ -55,8 +56,8 @@ export class MeteoService {
       });
 
       const result = await request.json();
-      return  result;
-
+      //console.log(result);
+      return result.list;
     } catch (err) {
       console.error("Qualcosa è andato storto", err);
     }
