@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { MeteoService } from '../meteo.service';
 
 @Component({
   selector: 'app-meteo',
@@ -10,12 +7,21 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./meteo.page.scss'],
 })
 export class MeteoPage implements OnInit {
-  meteoData!: Observable<any>;
-  constructor() {
-
-  }
+  
+  constructor(private meteo: MeteoService) {};
 
   ngOnInit() {
+    this.previsioni();
+  }
+
+  async cheTempoFa(city: string){
+    /**testo la chiamata get*/
+    //this.meteo.getWeather(city);
+  }
+
+  async previsioni(){
+    /**Chiamata a hourly forecast per la città di Modena*/
+    console.log(await this.meteo.previsioni());
   }
 
 }
