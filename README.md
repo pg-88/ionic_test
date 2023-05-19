@@ -26,7 +26,7 @@ comando che genera automaticamente una cartella (dentro app) con i 4 files che s
 
 Parte HTML della pagina, **template**, sfrutta la logica del component che si trova in app.component.ts.
 Angular si occupa del binding dei dati tra il template e la class component:
-- **Property binding** -> Per modificate il valore di attributi dei tag bisogna mettere il nome dell'attributo tra `[]` e assegnargli un nome variabile che sarà ripreso nella class component. [doc](https://angular.io/guide/property-binding)
+- **Property binding** -> Per modificare il valore di attributi dei tag bisogna mettere il nome dell'attributo tra `[]` e assegnargli un nome variabile che sarà ripreso nella class component. [doc](https://angular.io/guide/property-binding)
 - **Event binding** -> Per associare la chiamata di una fz (metodo) a un evento, si inserisce nel tag il nome evento tra tonde esempio: `(click)="myOnCick()"` dove myOnClick() sarà definita nel class component.
 - per utilizzare gli elementi del template inserisco un nome preceduto da # che posso richiamare dalla class component.
 
